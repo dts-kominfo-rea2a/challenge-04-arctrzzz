@@ -10,21 +10,20 @@ const dates = [
 // TODO: Buatlah fungsi createDate
 
 const createDate = function (dates, index) {
- let dateInput = dates;
- let indexDate = index;
- let output = 0;
+  let dateInput = dates;
+  let indexDate = index;
+  let output = 0;
 
-  if ( indexDate === undefined || indexDate === null) {
-  output = [];
-  for (i = 0; i < dateInput.length ; i++) {
-    output.push(Math.round(Date.parse(dateInput[i])/1000).toString())
-  }
+  if (indexDate === undefined || indexDate === null) {
+    output = [];
+    for (i = 0; i < dateInput.length; i++) {
+      output.push(Math.round(Date.parse(dateInput[i]) / 1000).toString());
+    }
     output = output.sort().join("-");
+  } else
+    output = Math.round(Date.parse(dateInput[indexDate]) / 1000).toString();
 
- } else (
-   output = Math.round(Date.parse(dateInput[indexDate])/1000).toString());
-
-   return output;
+  return output;
 };
 
 // ! JANGAN DIMODIFIKASI
